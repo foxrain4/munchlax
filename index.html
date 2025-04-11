@@ -4,19 +4,38 @@
   <meta charset="UTF-8">
   <title>Munchlax Click Test</title>
   <style>
-    body {
-      background: #1b1b1b;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+    <script>
+  const img = document.querySelector('.munchlax');
 
-    .munchlax {
-      width: 300px;
-      transition: transform 0.1s ease;
-      cursor: pointer;
-    }
+  img.addEventListener('click', () => {
+    img.style.transform = 'scale(0.9) rotate(-2deg)';
+    
+    setTimeout(() => {
+      img.style.transform = 'scale(1.05) rotate(1deg)';
+    }, 100);
+
+    setTimeout(() => {
+      img.style.transform = 'scale(1) rotate(0deg)';
+    }, 250);
+  });
+</script>
+
+body {
+  background: #1b1b1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* This hides scrollbars */
+}
+
+.munchlax {
+  width: 200px; /* Smaller */
+  transition: transform 0.1s ease;
+  cursor: pointer;
+}
+
 
     .munchlax:active {
       transform: scale(0.9) rotate(-2deg);
